@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+nav {
+  background-color: #f5e9d7;
+  padding-bottom: 50px;
+  #navbar-default {
+    ul {
+      li {
+        .home {
+          color: #ff923e;
+        }
+        a {
+          &:hover {
+            color: #ff923e;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+  }
+}

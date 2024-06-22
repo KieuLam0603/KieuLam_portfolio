@@ -1,0 +1,172 @@
+#resume {
+  background-color: #f5e9d7;
+  padding-top: 30px;
+  padding-bottom: 50px;
+
+  .resumeContainer {
+    margin: 0 auto;
+    max-width: 1000px;
+
+    h1 {
+      text-align: center;
+      font-size: 50px;
+      margin-bottom: 30px;
+      font-weight: 500;
+
+      span:last-child {
+        color: #2c7490;
+      }
+    }
+
+    .resumeContent {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .resumeLeft,
+      .resumeRight {
+        width: 45%;
+      }
+
+      .leftText,
+      .rightText {
+        h3 {
+          letter-spacing: 5px;
+          color: #ff923e;
+          position: absolute;
+          font-weight: bold;
+          opacity: 0.5;
+        }
+        #leftTitle {
+          font-size: 50px;
+          transform: translate(-60%, -100%) rotate(-90deg);
+          animation: slideRight 1.5s ease forwards;
+        }
+        #rightTitle {
+          font-size: 30px;
+          transform: translate(170%, 210%) rotate(90deg);
+          animation: slideLeft 1.5s ease forwards;
+        }
+      }
+
+      .leftBox,
+      .rightBox {
+        .boxContent {
+          padding: 0 20px;
+
+          .boxItem {
+            border: 2px dashed #ff923e;
+            border-radius: 5px;
+            padding: 15px;
+            transition: 0.8s;
+            animation: fadeIn 1s ease-out;
+
+            &:hover {
+              border: 2px solid #ff923e;
+              background-color: white;
+              box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+            }
+
+            h4 {
+              font-size: 17px;
+              font-weight: bold;
+              color: #2c7490;
+            }
+
+            h5 {
+              margin-bottom: 10px;
+              color: #2c7490;
+            }
+            h6 {
+              font-size: 14px;
+              font-weight: 500;
+              margin-bottom: 5px;
+            }
+
+            p {
+              font-size: 14px;
+              text-align: justify;
+            }
+
+            span {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .leftBox {
+        position: relative;
+        border-left: 1px solid #ff923e;
+        padding-left: 10px;
+
+        &::before {
+          content: "";
+          width: 15px;
+          height: 15px;
+          background-color: #ff923e;
+          border-radius: 50%;
+          position: absolute;
+          transform: translate(-120%, -50%);
+        }
+        &::after {
+          content: "";
+          width: 15px;
+          height: 15px;
+          background-color: #ff923e;
+          border-radius: 50%;
+          position: absolute;
+          transform: translate(-120%, -50%);
+        }
+      }
+      .rightBox {
+        position: relative;
+        border-right: 1px solid #ff923e;
+        padding-right: 10px;
+
+        &::before {
+          content: "";
+          width: 15px;
+          height: 15px;
+          background-color: #ff923e;
+          border-radius: 50%;
+          position: absolute;
+          right: -8px;
+          top: 0;
+          transform: translate(0, -50%);
+        }
+        &::after {
+          content: "";
+          width: 15px;
+          height: 15px;
+          background-color: #ff923e;
+          border-radius: 50%;
+          position: absolute;
+          right: -8px;
+          bottom: 0;
+          transform: translate(0, 50%);
+        }
+      }
+    }
+  }
+}
+
+// animation cho thẻ leftTitle
+@keyframes slideRight {
+  0% {
+    transform: translate(-200%, 200%) rotate(-90deg);
+  }
+  100% {
+    transform: translate(-60%, 200%) rotate(-90deg);
+  }
+}
+
+// animation cho thẻ rightTitle
+@keyframes slideLeft {
+  0% {
+    transform: translate(300%, 210%) rotate(90deg);
+  }
+  100% {
+    transform: translate(170%, 210%) rotate(90deg);
+  }
+}

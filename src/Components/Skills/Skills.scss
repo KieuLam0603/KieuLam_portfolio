@@ -1,0 +1,130 @@
+$animation-duration: 0.8s;
+$animation-delay: 0.6s;
+
+#skills {
+  margin: 40px 0;
+  position: relative;
+  .skillsContainer {
+    margin: 0 auto;
+    max-width: 1000px;
+    position: relative;
+    z-index: 1;
+    h1 {
+      text-align: center;
+      font-size: 50px;
+      margin-bottom: 20px;
+      font-weight: 500;
+      span:last-child {
+        color: #2c7490;
+      }
+    }
+    .skillsContent {
+      .skillsItems {
+        ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            border: 2px solid #ff923e;
+            border-radius: 35px;
+            background-color: #f5e9d7;
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.5s ease, box-shadow 0.5s ease,
+              opacity 0.5s ease, transform 0.5s ease;
+            animation: slideInFromRight $animation-duration ease;
+
+            .skillsUnit {
+              margin-right: 30px;
+              font-weight: bold;
+              font-size: 20px;
+              color: #2c7490;
+            }
+
+            .skillsIcon {
+              margin-right: 15px;
+              border: 2px solid #ff923e;
+              border-radius: 40px;
+              background-color: white;
+              width: 110px;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              img {
+                width: 22px;
+              }
+            }
+
+            &:hover {
+              background-color: white;
+              box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+              opacity: 1;
+              transform: scale(1.1);
+            }
+          }
+          @for $i from 1 through 7 {
+            li:nth-child(#{$i}) {
+              animation-delay: $i * $animation-delay;
+            }
+          }
+        }
+
+        ul:hover li {
+          opacity: 0.5;
+          transform: scale(0.9);
+        }
+
+        ul li:hover {
+          opacity: 1 !important;
+          transform: scale(1.1) !important;
+        }
+      }
+    }
+  }
+  .skillsBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    .dot {
+      position: absolute;
+      background-color: #ff923e;
+      border-radius: 50%;
+      animation: move 5s infinite;
+      opacity: 0.7;
+    }
+  }
+}
+
+// animation các thẻ Li
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// animation dot skillsBg
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

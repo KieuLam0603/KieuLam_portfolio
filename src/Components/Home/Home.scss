@@ -1,0 +1,238 @@
+.homePage {
+  position: relative;
+  color: #ff923e;
+  .homeContent {
+    background-color: #f5e9d7;
+
+    .homeContainer {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      height: 450px;
+      .homeLeft {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 55%;
+        opacity: 0;
+        animation: fadeRight 2s forwards;
+        h2 {
+          font-size: 20px;
+        }
+        p {
+          text-align: justify;
+          padding-right: 150px;
+        }
+        .buttonCV {
+          margin-top: 40px;
+          animation: moveUpDown 3s infinite;
+        }
+      }
+      .homeRight {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        .homeImg {
+          max-width: 100%;
+          height: auto;
+          position: relative;
+          z-index: 1;
+          animation: slideUp 2s ease-in-out;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 40%;
+          left: 52%;
+          transform: translate(-50%, -50%);
+          width: 320px;
+          height: 320px;
+          background-color: #ff923e;
+          border-radius: 50%;
+          z-index: 0;
+        }
+      }
+      .homeButton {
+        position: absolute;
+        bottom: 15%;
+        right: 2rem;
+        z-index: 10;
+
+        .buttonContainer {
+          position: relative;
+          text-align: center;
+
+          .buttonMenu {
+            height: 55px;
+            width: 55px;
+            background-color: #2c7490;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+            position: relative;
+            animation: fadeIn 1s ease-out;
+
+            i {
+              color: white;
+              font-size: 24px;
+            }
+
+            &:hover {
+              background-color: #ff923e;
+              transition: all 0.5s;
+            }
+
+            .tooltip {
+              position: absolute;
+              visibility: hidden;
+              opacity: 0;
+              transition: all 0.5s;
+              background-color: #2c7490;
+              color: white;
+              font-size: 15px;
+              padding: 5px;
+              border-radius: 15px;
+              top: 50%;
+              left: -180%;
+              transform: translateY(-50%);
+              white-space: nowrap;
+            }
+
+            &:hover .tooltip {
+              visibility: visible;
+              opacity: 1;
+              transform: translateY(-50%);
+            }
+          }
+
+          #buttonLinks {
+            margin-bottom: 10px;
+            transition: all 0.3s;
+            position: absolute;
+            right: 0;
+            bottom: 60px;
+            text-align: center;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+
+            &.show {
+              visibility: visible;
+              opacity: 1;
+              transform: translateY(0);
+              transition: all 0.8s ease;
+            }
+
+            li {
+              margin: 20px 4px 20px 0;
+              list-style: none;
+              transition: all 0.8s ease;
+
+              a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 45px;
+                width: 45px;
+                border-radius: 50%;
+                border: 2px solid #2c7490;
+                transition: all 0.3s;
+                position: relative;
+
+                .tooltip {
+                  position: absolute;
+                  visibility: hidden;
+                  opacity: 0;
+                  transition: all 0.5s;
+                  background-color: #2c7490;
+                  color: white;
+                  font-size: 8px;
+                  padding: 5px;
+                  border-radius: 15px;
+                  top: 50%;
+                  right: 50px;
+                  transform: translateY(-50%);
+                  white-space: nowrap;
+                }
+
+                &:hover .tooltip {
+                  visibility: visible;
+                  opacity: 1;
+                  transform: translateY(-50%) scale(1.1);
+                }
+
+                &.facebook:hover {
+                  border: 2px solid #ff923e;
+                  transform: scale(1.2);
+                  transition: transform 0.5s ease;
+                }
+
+                &.github:hover {
+                  border: 2px solid #ff923e;
+                  transform: scale(1.2);
+                  transition: transform 0.5s ease;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// aninmation cho thẻ buttonCV
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+// aninmation cho thẻ homeLeft
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+// aninmation cho thẻ homeRight
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+// aninmation cho thẻ buttonMenu
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
