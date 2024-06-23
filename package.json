@@ -37,6 +37,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/node"
+      }
+    ],
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "preinstall": "npm install --legacy-peer-deps"
