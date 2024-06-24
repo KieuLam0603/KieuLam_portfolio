@@ -55,7 +55,7 @@ const About = () => {
         </h1>
         <div className="aboutContent">
           <div className="aboutLeft" ref={aboutLeftRef}>
-            <img className="aboutImg" src="/images/avatar.jpg" alt="avatar" />
+            <img className="aboutImg" src="/images/img.png" alt="avatar" />
           </div>
           <div className="aboutRight" ref={aboutRightRef}>
             <ul>
